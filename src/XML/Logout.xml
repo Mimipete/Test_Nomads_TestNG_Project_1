@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Logout Suit">
+    <test name="Logout">
+
+        <groups>
+            <run>
+              <include name="Logout"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="US_403.PerformLogoutFromTheSystem"></class>
+        </classes>
+
+    </test>
+</suite>

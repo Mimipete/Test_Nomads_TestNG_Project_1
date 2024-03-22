@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Patient Management Suit">
+    <test name="Patient Management">
+
+        <groups>
+            <run>
+              <include name="PatientManagement"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="US_406.PatientSearchInPatientList"></class>
+        </classes>
+
+    </test>
+</suite>

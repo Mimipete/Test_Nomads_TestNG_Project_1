@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Appointment Suit">
+    <test name="Appointment">
+
+        <groups>
+            <run>
+              <include name="Appointment"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="US_410.SystemTimezone"></class>
+        </classes>
+
+    </test>
+</suite>

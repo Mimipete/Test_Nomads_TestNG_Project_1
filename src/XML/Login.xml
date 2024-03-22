@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Login Suit">
+    <test name="Login">
+
+        <groups>
+            <run>
+              <include name="Login"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="US_401.CheckingLoginErrorsInTheSystem"></class>
+        </classes>
+
+    </test>
+</suite>

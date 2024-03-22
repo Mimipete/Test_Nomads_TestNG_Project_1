@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Smoke Suit">
+    <test name="Smoke">
+
+        <groups>
+            <run>
+              <include name="Smoke Test"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="US_401.CheckingLoginErrorsInTheSystem"></class>
+        </classes>
+
+    </test>
+</suite>

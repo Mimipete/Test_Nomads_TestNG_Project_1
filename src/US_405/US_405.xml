@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="All Test Suite">
+    <test name="project">
+        <classes>
+            <class></class>
+        </classes>
+    </test>
+</suite>
