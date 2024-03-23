@@ -14,9 +14,16 @@ public class ParentPage {
     WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
 
     public void myClick(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
         scrollToElement(element);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+    }
+
+    public void myJsClick(WebElement element) {
+        scrollToElement(element);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js=(JavascriptExecutor) BaseDriver.driver;
+        js.executeScript("arguments[0].click();", element);
     }
 
     public void mySendKeys(WebElement element, String text) {
@@ -28,7 +35,7 @@ public class ParentPage {
 
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) BaseDriver.driver;
-        js.executeScript("arguments[0].scrollIntoView();", element);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public void verifyContainsText(WebElement element, String value) {
