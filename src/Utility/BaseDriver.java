@@ -34,14 +34,14 @@ public class BaseDriver extends ParentPage {
     }
 
     @BeforeMethod
-    public void beforeMetod() {
+    public void beforeMethod() {
         logTutma.info("Method started.");
 
     }
 
     @AfterMethod
-    public void afterMetod(ITestResult sonuc) {
-        logTutma.info(sonuc.getName() + " Method finished. " + (sonuc.getStatus() == 1 ? "Passed" : "Failed"));
+    public void afterMethod(ITestResult sonuc) {
+        logTutma.info(sonuc.getName() + " Method " + (sonuc.getStatus() == 1 ? "Passed." : "Failed."));
 
     }
 
