@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class LoginContent {
     public LoginContent() {
         PageFactory.initElements(BaseDriver.driver, this);
@@ -19,8 +21,8 @@ public class LoginContent {
     public WebElement username;
     @FindBy(id = "password")
     public WebElement password;
-    @FindBy(css = "ul[id='sessionLocation']>li:nth-child(1)")
-    public WebElement location;
+    @FindBy(css = "ul[id='sessionLocation']>li")
+    public List<WebElement> locations;
     @FindBy(id = "loginButton")
     public WebElement logInButton;
 
