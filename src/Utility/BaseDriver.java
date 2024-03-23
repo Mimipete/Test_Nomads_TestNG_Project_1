@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -48,7 +47,7 @@ public class BaseDriver extends ParentPage {
 
     public void langSet() {
         WebElement element = driver.findElement(By.xpath("//*[@class='gt-current-lang']/span[1]"));
-        if (!element.getText().equals("en")) {
+        if (!element.getText().equalsIgnoreCase("en")) {
             myClick(element);
             myClick(driver.findElement(By.cssSelector("[data-gt-lang='en']")));
         }
