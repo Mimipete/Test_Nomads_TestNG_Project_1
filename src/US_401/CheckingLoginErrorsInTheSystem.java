@@ -2,9 +2,6 @@ package US_401;
 
 import POM.LoginContent;
 import Utility.BaseDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
