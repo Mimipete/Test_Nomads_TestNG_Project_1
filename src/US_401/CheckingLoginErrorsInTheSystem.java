@@ -15,7 +15,7 @@ public class CheckingLoginErrorsInTheSystem extends BaseDriver {
         LoginContent lc = new LoginContent();
         myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
-        myClick(lc.exploreOpenMRS2Demo);
+        myJsClick(lc.exploreOpenMRS2Demo);
         mySendKeys(lc.username, "");
         mySendKeys(lc.password, "");
         myClick(lc.logInButton);
