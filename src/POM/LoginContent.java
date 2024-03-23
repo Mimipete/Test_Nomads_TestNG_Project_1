@@ -15,7 +15,7 @@ public class LoginContent {
     public WebElement demoButton;
     @FindBy(xpath = "(//span[@class='elementor-button-text'])[2]")
     public WebElement exploreOpenMRS2;
-    @FindBy(xpath = "(//span[@class='elementor-button-text'])[4]")
+    @FindBy(xpath = "//*[text()='Enter the OpenMRS 2 Demo']")
     public WebElement exploreOpenMRS2Demo;
     @FindBy(id = "username")
     public WebElement username;
@@ -25,5 +25,8 @@ public class LoginContent {
     public List<WebElement> locations;
     @FindBy(id = "loginButton")
     public WebElement logInButton;
+
+    @FindBy(id = "sessionLocationError")
+    public WebElement LocationAlert;
 
 }

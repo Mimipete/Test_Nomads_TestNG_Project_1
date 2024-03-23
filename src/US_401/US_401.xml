@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="All Test Suite">
     <test name="project">
+
+        <groups>
+            <run>
+                <include name="Smoke Test"></include>
+            </run>
+        </groups>
+
         <classes>
-            <class></class>
+            <class name="US_401.CheckingLoginErrorsInTheSystem"></class>
         </classes>
     </test>
 </suite>
