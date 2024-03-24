@@ -11,18 +11,25 @@ public class LoginContent {
     public LoginContent() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
+
     @FindBy(css = "a[class='zak-button']")
     public WebElement demoButton;
+
     @FindBy(xpath = "(//span[@class='elementor-button-text'])[2]")
     public WebElement exploreOpenMRS2;
+
     @FindBy(xpath = "//*[text()='Enter the OpenMRS 2 Demo']")
     public WebElement exploreOpenMRS2Demo;
+
     @FindBy(id = "username")
     public WebElement username;
+
     @FindBy(id = "password")
     public WebElement password;
+
     @FindBy(css = "ul[id='sessionLocation']>li")
     public List<WebElement> locations;
+
     @FindBy(id = "loginButton")
     public WebElement logInButton;
 
@@ -31,5 +38,4 @@ public class LoginContent {
 
     @FindBy(id = "error-message")
     public WebElement credentialsAlert;
-
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -35,20 +34,20 @@ public class BaseDriver extends ParentPage {
     }
 
     @BeforeMethod
-    public void beforeMetod() {
+    public void beforeMethod() {
         logTutma.info("Method started.");
 
     }
 
     @AfterMethod
-    public void afterMetod(ITestResult sonuc) {
-        logTutma.info(sonuc.getName() + " Method finished. " + (sonuc.getStatus() == 1 ? "Passed" : "Failed"));
+    public void afterMethod(ITestResult sonuc) {
+        logTutma.info(sonuc.getName() + " Method " + (sonuc.getStatus() == 1 ? "Passed." : "Failed."));
 
     }
 
     public void langSet() {
         WebElement element = driver.findElement(By.xpath("//*[@class='gt-current-lang']/span[1]"));
-        if (!element.getText().equals("en")) {
+        if (!element.getText().equalsIgnoreCase("en")) {
             myClick(element);
             myClick(driver.findElement(By.cssSelector("[data-gt-lang='en']")));
         }

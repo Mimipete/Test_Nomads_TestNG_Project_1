@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HomePageContent {
     public HomePageContent() {
         PageFactory.initElements(BaseDriver.driver,this);
@@ -35,6 +37,23 @@ public class HomePageContent {
     public WebElement address;
     @FindBy(xpath = "//input[@id = 'submit']")
     public WebElement confirm;
+
+    // Patient's page
+    @FindBy(css = "span[class='PersonName-givenName']")
+    public WebElement givenName;
+
+    @FindBy(css = "div[class='float-sm-right']>span")
+    public WebElement patientID;
+
+    // Find Patient Record
+    @FindBy(css = "div[id='apps'] :nth-child(1)")
+    public WebElement findPatientRecord;
+
+    @FindBy(css = "table[id='patient-search-results-table']>tbody>tr")
+    public List<WebElement> patientRecordList;
+
+    @FindBy(id = "patient-search")
+    public WebElement patientSearch;
 
 
 }
