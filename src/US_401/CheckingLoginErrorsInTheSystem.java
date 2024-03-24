@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CheckingLoginErrorsInTheSystem extends BaseDriver {
-    @Test(dataProvider = "credentials", groups = {"Smoke", "Login"})
+    @Test(groups = {"Smoke", "Login"}, dataProvider = "credentials")
     public void TC_CheckingLoginErrorsInTheSystem(String username, String password, int location) {
 
         LoginContent lc = new LoginContent();
@@ -16,15 +16,18 @@ public class CheckingLoginErrorsInTheSystem extends BaseDriver {
         myJsClick(lc.exploreOpenMRS2Demo);
         mySendKeys(lc.username, username);
         mySendKeys(lc.password, password);
-        if (location!=8){
+        if (location != 8) {
             myClick(lc.locations.get(location));
         }
         myClick(lc.logInButton);
-        if (location==8){
+        if (location == 8) {
             Assert.assertEquals(lc.LocationAlert.getText(), "You must choose a location!", "Login basarili");
+        } else {
+            Assert.assertEquals(lc.credentialsAlert.getText(), "Invalid username/password. Please try again.");
         }
-        else ()
-
+        if (!username.equals("ümit")) {
+            driver.get("https://openmrs.org/");
+        }
 
 
     }
@@ -34,11 +37,11 @@ public class CheckingLoginErrorsInTheSystem extends BaseDriver {
         Object[][] invalidDatas =
                 {
                         {"admin", "", 1},
-                        {"", "Admin123",0},
-                        {"admin", "Admin123",8},
+                        {"", "Admin123", 0},
+                        {"admin", "Admin123", 8},
                         {"", "", 4},
                         {"admin", "", 8},
-                        {"", "", 8},
+                        {"ümit", "", 8},
                 };
         return invalidDatas;
     }
