@@ -7,11 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.awt.*;
 
 public class MyAccount extends BaseDriver {
     @Test(groups = "Smoke")
-    public void TC_MyAccount() throws InterruptedException, AWTException {
+    public void TC_MyAccount(){
         LoginContent lc = new LoginContent();
         myClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
