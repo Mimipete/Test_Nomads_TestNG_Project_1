@@ -11,6 +11,10 @@
 
         <classes>
             <class name="US_401.CheckingLoginErrorsInTheSystem"></class>
+            <class name="US_402.PerformLoginInTheSystem"></class>
+            <class name="US_403.PerformLogoutFromTheSystem"></class>
+            <class name="US_405.MyAccount"></class>
+            <class name="US_407.PatientDeletion"></class>
         </classes>
 
     </test>
