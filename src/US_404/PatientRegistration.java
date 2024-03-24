@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientRegistration extends BaseDriver {
-    @Test//(priority = 3,dependsOnMethods = {"TC_PerformLoginInTheSystem"},groups = {"Regression"})
+    @Test(dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"},groups = {"Regression"})
     public void TC_PatientRegistration() {
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();
@@ -21,7 +21,7 @@ public class PatientRegistration extends BaseDriver {
         //------
         mySendKeys(lc.username, "admin");
         mySendKeys(lc.password, "Admin123");
-        myClick(lc.locations.get(RandomGenerator(lc.locations.size(), 1)));
+        myClick(lc.locations.get(RandomGenerator(lc.locations.size()-1, 0)));
         myClick(lc.logInButton);
 
         myClick(hpc.registerAPatientButton);
@@ -45,9 +45,6 @@ public class PatientRegistration extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  //****
         Assert.assertEquals(hpc.givenName.getText(), "Test1", "Yanlış değer");
         Assert.assertTrue(hpc.patientID.isDisplayed());
-
-
-
 
     }
 }
