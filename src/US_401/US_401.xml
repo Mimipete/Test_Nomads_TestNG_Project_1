@@ -4,7 +4,8 @@
 
         <groups>
             <run>
-                <include name="Smoke Test"></include>
+                <include name="Smoke"></include>
+                <include name="Login"></include>
             </run>
         </groups>
 
