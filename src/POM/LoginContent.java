@@ -35,4 +35,7 @@ public class LoginContent {
 
     @FindBy(id = "sessionLocationError")
     public WebElement LocationAlert;
+
+    @FindBy(id = "error-message")
+    public WebElement credentialsAlert;
 }
