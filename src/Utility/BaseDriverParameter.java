@@ -36,7 +36,7 @@ public class BaseDriverParameter {
     }
 
     @AfterClass
-    public void afterClass(){
+    public void afterClass() {
         ParentPage.Wait(3);
         driver.quit();
 
@@ -44,14 +44,14 @@ public class BaseDriverParameter {
     }
 
     @BeforeMethod
-    public void beforeMetod(){
+    public void beforeMetod() {
         logTutma.info("Method started.");
 
     }
 
     @AfterMethod
-    public void afterMetod(ITestResult sonuc){
-        logTutma.info(sonuc.getName()+  " Method finished. "+ (sonuc.getStatus() ==1 ? "Passed" : "Failed"));
+    public void afterMetod(ITestResult sonuc) {
+        logTutma.info(sonuc.getName() + " Method finished. " + (sonuc.getStatus() == 1 ? "Passed" : "Failed"));
 
     }
 

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientRegistration extends BaseDriver {
-    @Test(dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"},groups = {"Regression"})
+    @Test(groups = {"Regression"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"})
     public void TC_PatientRegistration() {
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();
@@ -21,22 +21,22 @@ public class PatientRegistration extends BaseDriver {
         //------
         mySendKeys(lc.username, "admin");
         mySendKeys(lc.password, "Admin123");
-        myClick(lc.locations.get(RandomGenerator(lc.locations.size()-1, 0)));
+        myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));
         myClick(lc.logInButton);
 
         myClick(hpc.registerAPatientButton);
-        mySendKeys(hpc.given,"Test1");
-        mySendKeys(hpc.familyName,"Nomads1");
+        mySendKeys(hpc.given, "Test1");
+        mySendKeys(hpc.familyName, "Nomads1");
         myClick(hpc.nextButton);
-        Select gender=new Select(hpc.gender);
+        Select gender = new Select(hpc.gender);
         gender.selectByValue("M");
         myClick(hpc.nextButton);
-        mySendKeys(hpc.day,"2");
-        Select month=new Select(hpc.month);
+        mySendKeys(hpc.day, "2");
+        Select month = new Select(hpc.month);
         month.selectByValue("1");
-        mySendKeys(hpc.year,"2000");
+        mySendKeys(hpc.year, "2000");
         myClick(hpc.nextButton);
-        mySendKeys(hpc.address,"Türkiye");
+        mySendKeys(hpc.address, "Türkiye");
         myClick(hpc.nextButton);
         myClick(hpc.nextButton);
         myClick(hpc.nextButton);
