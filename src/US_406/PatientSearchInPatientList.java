@@ -25,14 +25,14 @@ public class PatientSearchInPatientList extends BaseDriver {
 
         myClick(hpc.findPatientRecord);
         System.out.println("**1. "+hpc.patientRecordList.getFirst().getText());
-        mySendKeys(hpc.patientSearch,"100HVL");
+        mySendKeys(hpc.patientSearch,"100JNX");
         System.out.println("** "+hpc.patientRecordList.getFirst().getText());
 
 
         //System.out.println(driver.findElement(By.cssSelector("1. "+"tr[class='odd']>td[class='dataTables_empty']")).getText());
         //System.out.println(driver.findElement(By.cssSelector("2. "+"td[class='dataTables_empty']")).getText());
-
-        //Assert.assertTrue(hpc.patientRecordList.get(0).findElement(By.cssSelector("[class='odd']>td")).getText().contains("100HVL"));
+        System.out.println(hpc.patientRecordList.get(0).findElement(By.cssSelector("[class='odd']>td")).getText().substring(0,6));
+        Assert.assertTrue(hpc.patientRecordList.get(0).findElement(By.cssSelector("[class='odd']>td")).getText().contains("100JNX"));
 
     }
 }

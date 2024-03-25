@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientRegistration extends BaseDriver {
-    @Test//(groups = {"Regression"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"})
+    @Test(groups = {"Regression"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"})
     public void TC_PatientRegistration() {
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();
