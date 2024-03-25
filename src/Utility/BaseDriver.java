@@ -15,7 +15,7 @@ public class BaseDriver extends ParentPage {
     public static Logger logTutma = LogManager.getLogger();
     public static WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void beforeClass() {
 
         driver = new ChromeDriver();
@@ -25,7 +25,7 @@ public class BaseDriver extends ParentPage {
         langSet();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void afterClass() {
         ParentPage.Wait(3);
         driver.quit();
@@ -33,13 +33,13 @@ public class BaseDriver extends ParentPage {
         logTutma.info("Driver closed.");
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         logTutma.info("Method started.");
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult sonuc) {
         logTutma.info(sonuc.getName() + " Method " + (sonuc.getStatus() == 1 ? "Passed." : "Failed."));
 
