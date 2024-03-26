@@ -29,8 +29,8 @@ public class PatientSearchInPatientList extends BaseDriver {
         myClick(lc.logInButton);
 
         myClick(hpc.findPatientRecord);
-        mySendKeys(hpc.patientSearch, "100K8T");
-        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), "Test Nomads"));
+        mySendKeys(hpc.patientSearch, "1003C3");
+        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), "Michael Taylor"));
         Assert.assertTrue(hpc.patientRecordList.getFirst().isEnabled());
         myJsClick(hpc.patientRecordList.getFirst());
 
@@ -38,15 +38,10 @@ public class PatientSearchInPatientList extends BaseDriver {
             Assert.assertTrue(hpc.patientInformation.get(i).isDisplayed());
         }
 
-        //  WebElement button=driver.findElement(By.cssSelector("[class='icon-home small']"));
-        //  myJsClick(button);
-        //  myClick(hpc.findPatientRecord);
-            ///**************
         driver.navigate().back();
         mySendKeys(hpc.patientSearch, "100ABC");
-        WebElement hata = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='dataTables_empty']")));
-        System.out.println(hata.getText());
-        Assert.assertEquals(hata.getText(), "No matching records found", "Hatalı");
+        wait.until(ExpectedConditions.visibilityOf(hpc.empty));
+        Assert.assertEquals(hpc.empty.getText(), "No matching records found");
 
     }
 }

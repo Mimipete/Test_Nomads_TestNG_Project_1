@@ -80,4 +80,7 @@ public class HomePageContent{
     public WebElement changePassword;
     @FindBy(css = "[id='tasks'] .button:nth-child(2)")
     public WebElement myLanguage;
+
+    @FindBy(xpath = "//td[text()='No matching records found']")
+    public WebElement empty;
 }
