@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class PerformLoginInTheSystem extends BaseDriver {
-    @Test(groups = {"Smoke", "Login"}, dataProvider = "credentials")
+    @Test(groups = {"Smoke", "Login","DependsOn"}, dataProvider = "credentials")
     public void TC_PerformLoginInTheSystem(String name, String password) {
         LoginContent lc = new LoginContent();
         myJsClick(lc.demoButton);
