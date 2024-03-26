@@ -28,8 +28,8 @@ public class PatientSearchInPatientList extends BaseDriver {
         myClick(lc.logInButton);
 
         myClick(hpc.findPatientRecord);
-        mySendKeys(hpc.patientSearch,"100J7W");
-        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"),"deneme1 deneme2"));
+        mySendKeys(hpc.patientSearch,"100JDJ");
+        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"),"Test Nomads"));
         Assert.assertTrue(hpc.patientRecordList.getFirst().isEnabled());
         myClick(hpc.patientRecordList.getFirst());
 
