@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="Search in Patient List Suite">
+    <test name="TC_406">
+
+        <groups>
+            <run>
+                <include name="PatientManagement"/>
+            </run>
+        </groups>
+
         <classes>
-            <class></class>
+            <class name="US_406.PatientSearchInPatientList"/>
         </classes>
+
     </test>
 </suite>
