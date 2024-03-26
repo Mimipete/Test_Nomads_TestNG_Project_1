@@ -34,6 +34,9 @@ public class DeletePatient {
     @FindBy(id = "patient-search")
     public WebElement patientSearch2;
 
+    @FindBy(xpath = "//td[text()='No matching records found']")
+    public WebElement empty;
+
 
 
 }

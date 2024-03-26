@@ -4,19 +4,24 @@ import POM.LoginContent;
 import Utility.BaseDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import javax.swing.plaf.PanelUI;
 
+import java.time.Duration;
+
 import static Utility.BaseDriver.driver;
 
 public class PatientDeletion extends BaseDriver {
 
-    @Test
+    @Test(groups = {"Smoke", "PatientManagement"})
     public void TC_PatientDeletion() {
         DeletePatient dp = new DeletePatient();
         LoginContent lc = new LoginContent();
+        WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
 
         myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
@@ -27,12 +32,14 @@ public class PatientDeletion extends BaseDriver {
         myClick(lc.logInButton);
 
         myClick(dp.FindPatientRecord);
-        mySendKeys(dp.patientSearch,"sarah ba");
+        mySendKeys(dp.patientSearch,"100DEM");
         myClick(dp.patient);
         myClick(dp.DeletePatient);
         mySendKeys(dp.reason, "discharged");
         myClick(dp.Confirm);
-
+        mySendKeys(dp.patientSearch,"100DEM");
+        wait.until(ExpectedConditions.visibilityOf(dp.empty));
+        Assert.assertTrue(dp.empty.getText().contains("No matching records found"));
 
 
 
