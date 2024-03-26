@@ -21,7 +21,6 @@ public class HomePageContent{
     @FindBy(id= "selected-location")
     public WebElement selectedLocation;
 
-
     // Register a patient
     @FindBy(css = "div[id='apps'] :nth-child(4)")
     public WebElement registerAPatientButton;
@@ -53,7 +52,6 @@ public class HomePageContent{
     @FindBy(xpath = "//input[@id = 'submit']")
     public WebElement confirm;
 
-
     // Patient's page
     @FindBy(css = "span[class='PersonName-givenName']")
     public WebElement givenName;
@@ -76,8 +74,10 @@ public class HomePageContent{
 
     @FindBy(css="[id='user-account-menu']")
     public WebElement userAccount;
+
     @FindBy(css="[id='tasks'] .button:nth-child(1)")
     public WebElement changePassword;
+
     @FindBy(css = "[id='tasks'] .button:nth-child(2)")
     public WebElement myLanguage;
 
