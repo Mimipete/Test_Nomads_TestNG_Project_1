@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class HomePageContent {
+public class HomePageContent{
     public HomePageContent() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
@@ -17,6 +17,10 @@ public class HomePageContent {
 
     @FindBy(xpath = "//ul[@class='navbar-nav ml-auto user-options']/li[1]")
     public WebElement profileIcon;
+
+    @FindBy(id= "selected-location")
+    public WebElement selectedLocation;
+
 
     // Register a patient
     @FindBy(css = "div[id='apps'] :nth-child(4)")
@@ -70,4 +74,10 @@ public class HomePageContent {
     @FindBy(css = "div[class='col-12 col-lg-6']>div")
     public List<WebElement> patientInformation;
 
+    @FindBy(css="[id='user-account-menu']")
+    public WebElement userAccount;
+    @FindBy(css="[id='tasks'] .button:nth-child(1)")
+    public WebElement changePassword;
+    @FindBy(css = "[id='tasks'] .button:nth-child(2)")
+    public WebElement myLanguage;
 }

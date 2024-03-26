@@ -1,6 +1,5 @@
 package POM;
 
-import Utility.BaseDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,9 +8,12 @@ import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
+
+import static Utility.BaseDriver.driver;
 
 public class ParentPage {
-    WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
     public void myClick(WebElement element) {
         scrollToElement(element);
@@ -22,7 +24,7 @@ public class ParentPage {
     public void myJsClick(WebElement element) {
         scrollToElement(element);
         wait.until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js=(JavascriptExecutor) BaseDriver.driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
 
@@ -34,7 +36,7 @@ public class ParentPage {
     }
 
     public void scrollToElement(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) BaseDriver.driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
@@ -50,6 +52,18 @@ public class ParentPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static boolean isClickable(WebElement element) {
+        String url = driver.getCurrentUrl();
+        element.click();
+        String url2 = driver.getCurrentUrl();
+        if (url.equalsIgnoreCase(url2)) {
+            return false;
+        } else {
+            driver.navigate().back();
+        }
+        return true;
     }
 
     public static int RandomGenerator(int max, int min) {
