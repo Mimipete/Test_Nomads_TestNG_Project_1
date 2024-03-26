@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="Login Suite">
+    <test name="TC_402">
 
         <groups>
             <run>
-                <include name="Smoke"></include>
-                <include name="Login"></include>
+                <include name="Smoke"/>
+                <include name="Login"/>
             </run>
         </groups>
 
         <classes>
-            <class name="US_402.PerformLoginInTheSystem"></class>
+            <class name="US_402.PerformLoginInTheSystem"/>
         </classes>
 
     </test>
