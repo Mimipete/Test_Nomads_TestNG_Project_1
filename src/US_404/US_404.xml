@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="Patient Registration Suite">
+    <test name="TC_404">
 
         <groups>
             <run>
-                <include name="Regression"></include>
+                <include name="DependsOn"/>
             </run>
         </groups>
 
         <classes>
-            <class name="US_404.PatientRegistration"></class>
+            <class name="US_404.PatientRegistration"/>
+            <class name="US_402.PerformLoginInTheSystem"/>
         </classes>
 
     </test>
