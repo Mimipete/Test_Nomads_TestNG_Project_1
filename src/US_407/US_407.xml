@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="All Test Suite">
     <test name="project">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <include name="PatientManagement"/>
+            </run>
+        </groups>
         <classes>
-            <class></class>
+            <class name="US_407.PatientDeletion"/>
         </classes>
     </test>
 </suite>
