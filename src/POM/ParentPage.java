@@ -13,7 +13,7 @@ import java.util.Set;
 import static Utility.BaseDriver.driver;
 
 public class ParentPage {
-    public WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
     public void myClick(WebElement element) {
         scrollToElement(element);
