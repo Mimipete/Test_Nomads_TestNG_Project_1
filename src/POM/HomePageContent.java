@@ -18,6 +18,10 @@ public class HomePageContent {
     @FindBy(xpath = "//ul[@class='navbar-nav ml-auto user-options']/li[1]")
     public WebElement profileIcon;
 
+    @FindBy(id= "selected-location")
+    public WebElement selectedLocation;
+
+
     // Register a patient
     @FindBy(css = "div[id='apps'] :nth-child(4)")
     public WebElement registerAPatientButton;
