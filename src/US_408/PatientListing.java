@@ -31,9 +31,6 @@ public class PatientListing extends BaseDriver {
             nmr3=Integer.parseInt(nmr2[5]);
             nmr4=Integer.parseInt(nmr2[3]);
         }
-
-
-        System.out.println(nmr3);
         Assert.assertEquals(nmr, nmr3, "bomboclatt!");
     }
 }
