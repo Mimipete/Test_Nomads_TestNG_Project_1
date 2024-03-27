@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="Logout Suite">
+    <test name="TC_403">
+
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <include name="Logout"/>
+            </run>
+        </groups>
+
         <classes>
-            <class></class>
+            <class name="US_403.PerformLogoutFromTheSystem"/>
         </classes>
+
     </test>
 </suite>
