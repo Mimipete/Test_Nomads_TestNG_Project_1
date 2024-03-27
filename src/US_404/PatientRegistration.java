@@ -17,7 +17,6 @@ public class PatientRegistration extends BaseDriver {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();
-
         myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
         myJsClick(lc.exploreOpenMRS2Demo);
@@ -25,7 +24,6 @@ public class PatientRegistration extends BaseDriver {
         mySendKeys(lc.password, "Admin123");
         myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));
         myClick(lc.logInButton);
-
         myClick(hpc.registerAPatientButton);
         mySendKeys(hpc.given, "Test");
         mySendKeys(hpc.familyName, "Nomads");
