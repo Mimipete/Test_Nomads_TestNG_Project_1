@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 public class CheckingLoginErrorsInTheSystem extends BaseDriver {
     @Test(groups = {"Smoke", "Login"}, dataProvider = "credentials")
     public void TC_CheckingLoginErrorsInTheSystem(String username, String password, int location) {
-
         LoginContent lc = new LoginContent();
         myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
@@ -21,15 +20,13 @@ public class CheckingLoginErrorsInTheSystem extends BaseDriver {
         }
         myClick(lc.logInButton);
         if (location == 8) {
-            Assert.assertEquals(lc.LocationAlert.getText(), "You must choose a location!", "Login basarili");
+            Assert.assertEquals(lc.LocationAlert.getText(), "You must choose a location!", "Login is successful.");
         } else {
             Assert.assertEquals(lc.credentialsAlert.getText(), "Invalid username/password. Please try again.");
         }
-        if (!username.equals("ümit")) {
+        if (!username.equals("end")) {
             driver.get("https://openmrs.org/");
         }
-
-
     }
 
     @DataProvider
@@ -41,7 +38,7 @@ public class CheckingLoginErrorsInTheSystem extends BaseDriver {
                         {"admin", "Admin123", 8},
                         {"", "", 4},
                         {"admin", "", 8},
-                        {"ümit", "", 8},
+                        {"end", "", 8},
                 };
         return invalidDatas;
     }
