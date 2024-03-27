@@ -5,12 +5,12 @@
 
         <groups>
             <run>
-              <include name="Appointment"></include>
+                <include name="Appointment"/>
             </run>
         </groups>
 
         <classes>
-            <class name="US_410.SystemTimezone"></class>
+            <class name="US_410.SystemTimezone"/>
         </classes>
 
     </test>
