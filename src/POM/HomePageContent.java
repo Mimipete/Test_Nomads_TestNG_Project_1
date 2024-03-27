@@ -101,4 +101,29 @@ public class HomePageContent{
 
     @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']/div[2]/button")
     public WebElement confirmRight;
+
+    // Data Management
+    @FindBy(css = "[id*='datamanagement']")
+    public WebElement dataManagementButton;
+
+    @FindBy(css = "[id*='mergePatient']")
+    public WebElement mergePatientButton;
+
+    @FindBy(css = "input[id*='patient'][type='text']")
+    public List<WebElement> inputID;
+
+    @FindBy(css = "[id='confirm-button']")
+    public WebElement continueButton;
+
+    @FindBy(css = "[class='messages-container']>h1")
+    public WebElement mergeWarning;
+
+    @FindBy(css = "[class='patient center']")
+    public List<WebElement> patients;
+
+    @FindBy(css = "[class='button confirm']")
+    public WebElement confirmButton;
+
+    @FindBy(css = "[class='float-sm-right']")
+    public WebElement IDText;
 }
