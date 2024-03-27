@@ -14,9 +14,8 @@ public class PerformLoginInTheSystem extends BaseDriver {
         myJsClick(lc.exploreOpenMRS2Demo);
         mySendKeys(lc.username, name);
         mySendKeys(lc.password, password);
-        myClick(lc.locations.get(0));
+        myClick(lc.locations.getFirst());
         myClick(lc.logInButton);
-
         if (driver.getTitle().equals("Login")) {
             driver.get("https://openmrs.org/");
         }
@@ -24,17 +23,15 @@ public class PerformLoginInTheSystem extends BaseDriver {
 
     @DataProvider
     Object[][] credentials() {
-        Object[][] nameAndpasswordd = {
+        Object[][] nameAndPassword = {
                 {"", ""},
                 {"admin", ""},
                 {"", "Admin123"},
-                {"name4", "Admin123"},
-                {"admin", "password4"},
-                {"name6", "password2"},
+                {"invalid", "Admin123"},
+                {"admin", "invalid"},
+                {"invalid", "invalid"},
                 {"admin", "Admin123"}
         };
-        return nameAndpasswordd;
-
+        return nameAndPassword;
     }
 }
-
