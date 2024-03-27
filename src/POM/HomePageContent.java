@@ -83,4 +83,16 @@ public class HomePageContent{
 
     @FindBy(xpath = "//td[text()='No matching records found']")
     public WebElement empty;
+
+    @FindBy(xpath = "//tbody[@role='alert']/tr[1]")
+    public WebElement patient;
+
+    @FindBy(xpath = "//div[@class='col-12 col-lg-3 p-0']/div/ul/li[8]")
+    public WebElement deletePatient;
+
+    @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']/div[2]/input")
+    public WebElement reason;
+
+    @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']/div[2]/button")
+    public WebElement confirmRight;
 }
