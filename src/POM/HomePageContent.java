@@ -81,6 +81,12 @@ public class HomePageContent{
     @FindBy(css = "[id='tasks'] .button:nth-child(2)")
     public WebElement myLanguage;
 
+    @FindBy(xpath = "//a[text()='Next']")
+    public WebElement next;
+  
+    @FindBy(css = "[class='dataTables_info']")
+    public WebElement numbers;
+  
     @FindBy(xpath = "//td[text()='No matching records found']")
     public WebElement empty;
 
