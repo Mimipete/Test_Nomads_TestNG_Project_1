@@ -76,4 +76,8 @@ public class HomePageContent{
     public WebElement changePassword;
     @FindBy(css = "[id='tasks'] .button:nth-child(2)")
     public WebElement myLanguage;
+    @FindBy(xpath = "//a[text()='Next']")
+    public WebElement next;
+    @FindBy(css = "[class='dataTables_info']")
+    public WebElement numbers;
 }
