@@ -12,12 +12,11 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientRegistration extends BaseDriver {
-    @Test(groups = {"Regression","DependsOn"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"})
+    @Test(groups = {"Regression", "DependsOn"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"})
     public void TC_PatientRegistration() {
-        WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();
-
         myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
         myJsClick(lc.exploreOpenMRS2Demo);
@@ -25,7 +24,6 @@ public class PatientRegistration extends BaseDriver {
         mySendKeys(lc.password, "Admin123");
         myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));
         myClick(lc.logInButton);
-
         myClick(hpc.registerAPatientButton);
         mySendKeys(hpc.given, "Test");
         mySendKeys(hpc.familyName, "Nomads");
@@ -44,7 +42,8 @@ public class PatientRegistration extends BaseDriver {
         myClick(hpc.nextButton);
         myClick(hpc.confirm);
         wait.until(ExpectedConditions.visibilityOf(hpc.givenName));
-        Assert.assertEquals(hpc.givenName.getText(), "Test", "Patient name could not be displayed.");
+        Assert.assertTrue(hpc.givenName.isDisplayed(), "Patient name could not be displayed.");
+        Assert.assertEquals(hpc.givenName.getText(), "Test", "The name displayed does not belong to the registered patient.");
         Assert.assertTrue(hpc.patientID.isDisplayed());
     }
 }

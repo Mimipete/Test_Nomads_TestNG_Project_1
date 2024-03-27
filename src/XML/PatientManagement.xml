@@ -5,12 +5,15 @@
 
         <groups>
             <run>
-              <include name="PatientManagement"></include>
+                <include name="PatientManagement"/>
             </run>
         </groups>
 
         <classes>
-            <class name="US_406.PatientSearchInPatientList"></class>
+            <class name="US_406.PatientSearchInPatientList"/>
+            <class name="US_407.PatientDeletion"/>
+            <class name="US_408.PatientListing"/>
+            <class name="US_409.PatientRecordMerge"/>
         </classes>
 
     </test>

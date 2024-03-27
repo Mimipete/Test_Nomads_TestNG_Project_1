@@ -18,6 +18,9 @@ public class HomePageContent{
     @FindBy(xpath = "//ul[@class='navbar-nav ml-auto user-options']/li[1]")
     public WebElement profileIcon;
 
+    @FindBy(id= "selected-location")
+    public WebElement selectedLocation;
+
     // Register a patient
     @FindBy(css = "div[id='apps'] :nth-child(4)")
     public WebElement registerAPatientButton;
@@ -49,7 +52,6 @@ public class HomePageContent{
     @FindBy(xpath = "//input[@id = 'submit']")
     public WebElement confirm;
 
-
     // Patient's page
     @FindBy(css = "span[class='PersonName-givenName']")
     public WebElement givenName;
@@ -72,12 +74,31 @@ public class HomePageContent{
 
     @FindBy(css="[id='user-account-menu']")
     public WebElement userAccount;
+
     @FindBy(css="[id='tasks'] .button:nth-child(1)")
     public WebElement changePassword;
+
     @FindBy(css = "[id='tasks'] .button:nth-child(2)")
     public WebElement myLanguage;
+
     @FindBy(xpath = "//a[text()='Next']")
     public WebElement next;
+  
     @FindBy(css = "[class='dataTables_info']")
     public WebElement numbers;
+  
+    @FindBy(xpath = "//td[text()='No matching records found']")
+    public WebElement empty;
+
+    @FindBy(xpath = "//tbody[@role='alert']/tr[1]")
+    public WebElement patient;
+
+    @FindBy(xpath = "//div[@class='col-12 col-lg-3 p-0']/div/ul/li[8]")
+    public WebElement deletePatient;
+
+    @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']/div[2]/input")
+    public WebElement reason;
+
+    @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']/div[2]/button")
+    public WebElement confirmRight;
 }

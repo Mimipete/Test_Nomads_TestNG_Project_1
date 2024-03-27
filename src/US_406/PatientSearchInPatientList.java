@@ -13,29 +13,28 @@ import java.time.Duration;
 
 public class PatientSearchInPatientList extends BaseDriver {
     @Test(groups = {"PatientManagement"})
-    public void TC_PatientSearchInPatientList(){
+    public void TC_PatientSearchInPatientList() {
         WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();
-
         myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
         myJsClick(lc.exploreOpenMRS2Demo);
-
         mySendKeys(lc.username, "admin");
         mySendKeys(lc.password, "Admin123");
-        myClick(lc.locations.get(RandomGenerator(lc.locations.size()-1, 1)));
+        myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));
         myClick(lc.logInButton);
-
         myClick(hpc.findPatientRecord);
-        mySendKeys(hpc.patientSearch,"100JDJ");
-        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"),"Test Nomads"));
+        mySendKeys(hpc.patientSearch, "100KK3");
+        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), "Test Nomads"));
         Assert.assertTrue(hpc.patientRecordList.getFirst().isEnabled());
-        myClick(hpc.patientRecordList.getFirst());
-
+        myJsClick(hpc.patientRecordList.getFirst());
         for (int i = 0; i < hpc.patientInformation.size(); i++) {
             Assert.assertTrue(hpc.patientInformation.get(i).isDisplayed());
         }
-
+        driver.navigate().back();
+        mySendKeys(hpc.patientSearch, "100ABC");
+        wait.until(ExpectedConditions.visibilityOf(hpc.empty));
+        Assert.assertEquals(hpc.empty.getText(), "No matching records found");
     }
 }
