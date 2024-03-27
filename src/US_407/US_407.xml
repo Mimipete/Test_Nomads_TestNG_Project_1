@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="Patient Deletion Suite">
+    <test name="TC_407">
         <groups>
             <run>
                 <include name="Smoke"/>
