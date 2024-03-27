@@ -20,15 +20,11 @@ public class MyAccount extends BaseDriver {
         myClick(driver.findElement(By.cssSelector("[id='Inpatient Ward']")));
         myClick(driver.findElement(By.cssSelector("[id='loginButton']")));
 
-
         Actions dAct = new Actions(driver);
         dAct.moveToElement(lc.profileIcon).perform();
         myClick(lc.userAccount);
 
-
         Assert.assertTrue(isClickable(lc.changePassword));
         Assert.assertTrue(isClickable(lc.myLanguage));
-
-
     }
 }
