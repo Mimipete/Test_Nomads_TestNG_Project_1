@@ -16,9 +16,11 @@ public class PerformLogoutFromTheSystem extends BaseDriver {
         myJsClick(lc.exploreOpenMRS2Demo);
         mySendKeys(lc.username, "admin");
         mySendKeys(lc.password, "Admin123");
-        myClick(lc.locations.getFirst());
+        int index = RandomGenerator(lc.locations.size() - 1, 0);
+        String selectedLocations = lc.locations.get(index).getText();
+        myClick(lc.locations.get(index));
         myClick(lc.logInButton);
-        Assert.assertEquals(hpc.selectedLocation.getText(), "Inpatient Ward");
+        Assert.assertEquals(hpc.selectedLocation.getText(), selectedLocations, "The selected location could not be displayed on the page.");
         Assert.assertTrue(hpc.logoutButton.isDisplayed());
         myClick(hpc.logoutButton);
         Assert.assertEquals(driver.getTitle(), "Login", "Failed to return to the login page.");
