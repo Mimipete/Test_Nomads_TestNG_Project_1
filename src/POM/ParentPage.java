@@ -8,7 +8,6 @@ import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Set;
 
 import static Utility.BaseDriver.driver;
 
@@ -43,7 +42,6 @@ public class ParentPage {
     public void verifyContainsText(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
-
     }
 
     public static void Wait(long sec) {

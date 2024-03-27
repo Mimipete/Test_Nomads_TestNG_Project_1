@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.security.auth.login.LoginContext;
 import java.util.List;
 
 public class LoginContent extends HomePageContent {
