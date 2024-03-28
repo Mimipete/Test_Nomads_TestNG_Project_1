@@ -1,19 +1,12 @@
 package US_409;
 
-import POM.HomePageContent;
-import POM.LoginContent;
-import POM.ParentPage;
+import POM.*;
 import Utility.BaseDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PatientRecordMerge extends BaseDriver {
     @Test(groups = {"Regression", "PatientManagement"}, priority = 9)
