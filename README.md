@@ -39,7 +39,7 @@ The OpenMRS Project is open source and developed by a community. The project bri
 ## Team Members
 
 - [Mehmet Özcan Sayış](https://github.com/ozcansayis)
-- [Fatoş Ergündüz](https://github.com/teknostudy)
+- [Fatoş Ergündüz](https://github.com/fatosergunduz)
 - [Abdulkabir Türkoğlu](https://github.com/AbdulkabirTurkoglu)
 - [Hakan Yeğin](https://github.com/hakanyegin)
 - [Samed Yekenkurul](https://github.com/samfrmda01)
