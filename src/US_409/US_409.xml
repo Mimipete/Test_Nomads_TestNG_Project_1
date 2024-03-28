@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Merge Suite">
     <test name="TC_409">
-        <groups>
-            <run>
-                <include name="Regression"/>
-            </run>
-        </groups>
-
         <classes>
             <class name="US_409.PatientRecordMerge"/>
         </classes>

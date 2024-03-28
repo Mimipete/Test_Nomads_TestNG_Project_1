@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="SystemTimeZone suite">
+    <test name="TC_410">
         <classes>
-            <class></class>
+            <class name="US_410.SystemTimezone"/>
+            <class name="US_402.PerformLoginInTheSystem"/>
         </classes>
     </test>
 </suite>
