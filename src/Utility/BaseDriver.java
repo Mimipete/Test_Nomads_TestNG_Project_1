@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -50,6 +52,18 @@ public class BaseDriver extends ParentPage {
         if (!element.getText().equalsIgnoreCase("en")) {
             myClick(element);
             myClick(driver.findElement(By.cssSelector("[data-gt-lang='en']")));
+        }
+    }
+
+    public void langCheck(){ // parameter?
+        WebElement findPatientText= driver.findElement(By.cssSelector("div[id='apps'] :nth-child(1)"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(findPatientText));
+        if (!findPatientText.getText().contains("Find")){
+            myClick(driver.findElement(By.cssSelector("[id*='administration']")));
+            myClick(driver.findElement(By.cssSelector("[id*='legacyAdmin']")));
+            myClick(driver.findElement(By.cssSelector("[id='localeOptions']>a")));
+            myClick(driver.findElement(By.cssSelector("[alt='OpenMRS Logo']")));
         }
     }
 }

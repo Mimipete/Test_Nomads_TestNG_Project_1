@@ -21,6 +21,9 @@ public class HomePageContent{
     @FindBy(id= "selected-location")
     public WebElement selectedLocation;
 
+    @FindBy(css = ".logo")
+    public WebElement homeButton;
+
     // Register a patient
     @FindBy(css = "div[id='apps'] :nth-child(4)")
     public WebElement registerAPatientButton;
@@ -101,4 +104,45 @@ public class HomePageContent{
 
     @FindBy(xpath = "//div[@id='delete-patient-creation-dialog']/div[2]/button")
     public WebElement confirmRight;
+
+    // Data Management
+    @FindBy(css = "[id*='datamanagement']")
+    public WebElement dataManagementButton;
+
+    @FindBy(css = "[id*='mergePatient']")
+    public WebElement mergePatientButton;
+
+    @FindBy(css = "input[id*='patient'][type='text']")
+    public List<WebElement> inputID;
+
+    @FindBy(css = "[id='confirm-button']")
+    public WebElement continueButton;
+
+    @FindBy(css = "[class='messages-container']>h1")
+    public WebElement mergeWarning;
+
+    @FindBy(css = "[class='patient center']")
+    public List<WebElement> patients;
+
+    @FindBy(css = "[class='button confirm']")
+    public WebElement confirmButton;
+
+    @FindBy(css = "[class='float-sm-right']")
+    public WebElement IDText;
+
+    // Appointment Scheduling
+    @FindBy(css = "[id*='appointment']")
+    public WebElement schedulingButton;
+
+    @FindBy(css = "[id*='manageAppointments']")
+    public WebElement manageAppointments;
+
+    @FindBy(css = "[class='note-container ng-scope']")
+    public WebElement zoneWarning;
+
+    @FindBy(css = "[class='note-container ng-scope ng-hide']")
+    public WebElement zoneWarning2;
+
+    @FindBy(css = "[ng-click='backToPatientSearch()']")
+    public WebElement back;
 }
