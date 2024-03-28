@@ -14,7 +14,7 @@ import java.time.*;
 
 public class SystemTimezone extends BaseDriver {
     // The Robot class codes are written in a manner compatible with Windows and switch between GMT+0 and GMT+3 time zones.
-    @Test
+    @Test(groups = {"Regression", "Appointment", "DependsOn"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"}, priority = 10)
     public void TC_SystemTimezone() throws AWTException {
         LoginContent lc = new LoginContent();
         HomePageContent hc = new HomePageContent();
@@ -61,13 +61,12 @@ public class SystemTimezone extends BaseDriver {
             rb.keyRelease(KeyEvent.VK_ENTER);
             ParentPage.Wait(1);
 
-            if (!timeCondition){
+            if (!timeCondition) {
                 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(gmt0, null);
-                timeCondition=true;
-            }
-            else {
+                timeCondition = true;
+            } else {
                 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(gmt3, null);
-                timeCondition=false;
+                timeCondition = false;
             }
             ParentPage.Wait(1);
 
@@ -80,7 +79,7 @@ public class SystemTimezone extends BaseDriver {
             ParentPage.roboPaste();
             rb.keyPress(KeyEvent.VK_ENTER);
             rb.keyRelease(KeyEvent.VK_ENTER);
-            if (i!=1)
+            if (i != 1)
                 myClick(hc.homeButton);
         }
     }
