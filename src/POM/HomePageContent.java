@@ -21,6 +21,9 @@ public class HomePageContent{
     @FindBy(id= "selected-location")
     public WebElement selectedLocation;
 
+    @FindBy(css = ".logo")
+    public WebElement homeButton;
+
     // Register a patient
     @FindBy(css = "div[id='apps'] :nth-child(4)")
     public WebElement registerAPatientButton;
@@ -126,4 +129,20 @@ public class HomePageContent{
 
     @FindBy(css = "[class='float-sm-right']")
     public WebElement IDText;
+
+    // Appointment Scheduling
+    @FindBy(css = "[id*='appointment']")
+    public WebElement schedulingButton;
+
+    @FindBy(css = "[id*='manageAppointments']")
+    public WebElement manageAppointments;
+
+    @FindBy(css = "[class='note-container ng-scope']")
+    public WebElement zoneWarning;
+
+    @FindBy(css = "[class='note-container ng-scope ng-hide']")
+    public WebElement zoneWarning2;
+
+    @FindBy(css = "[ng-click='backToPatientSearch()']")
+    public WebElement back;
 }
