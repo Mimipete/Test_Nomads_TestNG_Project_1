@@ -5,7 +5,7 @@
 
         <groups>
             <run>
-                <include name="Smoke Test"/>
+                <include name="Smoke"/>
             </run>
         </groups>
 

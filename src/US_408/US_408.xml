@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="All Test Suite">
-    <test name="project">
+<suite name="Patient Listing Suite">
+    <test name="TC_408">
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <include name="PatientManagement"/>
+            </run>
+        </groups>
         <classes>
-            <class></class>
+            <class name="US_408.PatientListing"/>
         </classes>
     </test>
 </suite>

@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PerformLogoutFromTheSystem extends BaseDriver {
-    @Test(groups = {"Smoke", "Logout"})
+    @Test(groups = {"Smoke", "Logout"},priority = 3)
     public void TC_PerformLogoutFromTheSystem() {
         LoginContent lc = new LoginContent();
         HomePageContent hpc = new HomePageContent();

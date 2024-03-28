@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="All Group Reports Suite">
+    <test name="All Group Reports">
+
+        <groups>
+            <run>
+                <include name="Login"/>
+                <include name="Smoke"/>
+                <include name="Regression"/>
+                <include name="Appointment"/>
+                <include name="PatientManagement"/>
+                <include name="Logout"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="US_401.CheckingLoginErrorsInTheSystem"/>
+            <class name="US_402.PerformLoginInTheSystem"/>
+            <class name="US_403.PerformLogoutFromTheSystem"/>
+            <class name="US_404.PatientRegistration"/>
+            <class name="US_405.MyAccount"/>
+            <class name="US_406.PatientSearchInPatientList"/>
+            <class name="US_407.PatientDeletion"/>
+            <class name="US_408.PatientListing"/>
+            <class name="US_409.PatientRecordMerge"/>
+            <class name="US_410.SystemTimezone"/>
+        </classes>
+
+    </test>
+</suite>

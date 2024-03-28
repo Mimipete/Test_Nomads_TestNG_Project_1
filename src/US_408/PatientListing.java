@@ -7,12 +7,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PatientListing extends BaseDriver {
-    @Test(groups = {"Regression", "Patient Management"})
+    @Test(groups = {"Regression", "PatientManagement"},priority = 8)
     public void TC_PatientListing() {
         LoginContent lc = new LoginContent();
-        myClick(lc.demoButton);
+        myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
-        myClick(lc.exploreOpenMRS2Demo);
+        myJsClick(lc.exploreOpenMRS2Demo);
         mySendKeys(lc.username, "admin");
         mySendKeys(lc.password, "Admin123");
         myClick(driver.findElement(By.cssSelector("[id='Inpatient Ward']")));

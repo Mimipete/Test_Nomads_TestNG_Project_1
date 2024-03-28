@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="Appointment Suit">
+<suite name="Appointment Suite">
     <test name="Appointment">
 
         <groups>
@@ -11,6 +11,8 @@
 
         <classes>
             <class name="US_410.SystemTimezone"/>
+            <class name="US_402.PerformLoginInTheSystem"/>
+
         </classes>
 
     </test>

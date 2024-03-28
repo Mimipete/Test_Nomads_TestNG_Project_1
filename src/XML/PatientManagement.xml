@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="Patient Management Suit">
+<suite name="Patient Management Suite">
     <test name="Patient Management">
 
         <groups>

@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CheckingLoginErrorsInTheSystem extends BaseDriver {
-    @Test(groups = {"Smoke", "Login"}, dataProvider = "credentials")
+    @Test(groups = {"Smoke", "Login"}, dataProvider = "credentials",priority = 1)
     public void TC_CheckingLoginErrorsInTheSystem(String username, String password, int location) {
         LoginContent lc = new LoginContent();
         myJsClick(lc.demoButton);

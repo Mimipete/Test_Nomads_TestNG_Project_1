@@ -10,9 +10,9 @@ public class MyAccount extends BaseDriver {
     @Test(groups = {"Smoke", "DependsOn"}, dependsOnMethods = "US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem")
     public void TC_MyAccount() {
         LoginContent lc = new LoginContent();
-        myClick(lc.demoButton);
+        myJsClick(lc.demoButton);
         myClick(lc.exploreOpenMRS2);
-        myClick(lc.exploreOpenMRS2Demo);
+        myJsClick(lc.exploreOpenMRS2Demo);
         mySendKeys(lc.username, "admin");
         mySendKeys(lc.password, "Admin123");
         myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));

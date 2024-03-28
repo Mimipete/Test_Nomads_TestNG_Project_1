@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientRegistration extends BaseDriver {
-    @Test(groups = {"Regression", "DependsOn"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"})
+    @Test(groups = {"Regression", "DependsOn"}, dependsOnMethods = {"US_402.PerformLoginInTheSystem.TC_PerformLoginInTheSystem"},priority = 4)
     public void TC_PatientRegistration() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         LoginContent lc = new LoginContent();
