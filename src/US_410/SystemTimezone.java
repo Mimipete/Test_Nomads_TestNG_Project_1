@@ -59,7 +59,7 @@ public class SystemTimezone extends BaseDriver {
 
             rb.keyPress(KeyEvent.VK_ENTER);
             rb.keyRelease(KeyEvent.VK_ENTER);
-            ParentPage.Wait(1);
+            ParentPage.Wait(3);
 
             if (!timeCondition) {
                 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(gmt0, null);

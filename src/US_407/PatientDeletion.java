@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientDeletion extends BaseDriver {
-    @Test(groups = {"Smoke", "PatientManagement"},priority = 7)
+    @Test(groups = {"Smoke", "PatientManagement"}, priority = 7)
     public void TC_PatientDeletion() {
         WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
         LoginContent lc = new LoginContent();
@@ -25,13 +25,15 @@ public class PatientDeletion extends BaseDriver {
         myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));
         myClick(lc.logInButton);
         myClick(hpc.findPatientRecord);
-        mySendKeys(hpc.patientSearch, "100JNX");
-        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), "Test Nomads"));
+        String id = hpc.patientRecordList.get(0).findElement(By.cssSelector("td")).getText().substring(0, 6);
+        String name = hpc.patientRecordList.get(0).findElement(By.cssSelector("td+td")).getText();
+        mySendKeys(hpc.patientSearch, id);
+        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), name));
         myJsClick(hpc.patient);
         myClick(hpc.deletePatient);
         mySendKeys(hpc.reason, "discharged");
         myClick(hpc.confirmRight);
-        mySendKeys(hpc.patientSearch, "100JNX");
+        mySendKeys(hpc.patientSearch, id);
         wait.until(ExpectedConditions.visibilityOf(hpc.empty));
         Assert.assertTrue(hpc.empty.getText().contains("No matching records found"));
     }

@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class PatientSearchInPatientList extends BaseDriver {
-    @Test(groups = {"PatientManagement"},priority = 6)
+    @Test(groups = {"PatientManagement"}, priority = 6)
     public void TC_PatientSearchInPatientList() {
         WebDriverWait wait = new WebDriverWait(BaseDriver.driver, Duration.ofSeconds(20));
         LoginContent lc = new LoginContent();
@@ -25,8 +25,10 @@ public class PatientSearchInPatientList extends BaseDriver {
         myClick(lc.locations.get(RandomGenerator(lc.locations.size() - 1, 0)));
         myClick(lc.logInButton);
         myClick(hpc.findPatientRecord);
-        mySendKeys(hpc.patientSearch, "100J19");
-        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), "Test Nomads"));
+        String id = hpc.patientRecordList.get(0).findElement(By.cssSelector("td")).getText().substring(0, 6);
+        String name = hpc.patientRecordList.get(0).findElement(By.cssSelector("td+td")).getText();
+        mySendKeys(hpc.patientSearch, id);
+        wait.until(ExpectedConditions.textToBe(By.xpath("//tr[@class='odd']/td[2]"), name));
         Assert.assertTrue(hpc.patientRecordList.getFirst().isEnabled());
         myJsClick(hpc.patientRecordList.getFirst());
         for (int i = 0; i < hpc.patientInformation.size(); i++) {
